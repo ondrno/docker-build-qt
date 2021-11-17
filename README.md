@@ -9,13 +9,13 @@ Both directories are propagated as container volume.
 # How to use
 ## Prepare the make files
 Given your application is stored in the current working directory in 
-the sub directory ``apps``. You can call ``cmake`` as follows to 
+the sub directory ``apps``, then you can call ``cmake`` as follows to 
 create the make files:
 
-``docker run -it --mount type=bind,source="$(pwd)/apps",target=/src ondrno/build-qt:latest cmake -B build /src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/opt/qt/6.2.1/gcc_64``
+``docker run -it -v$(pwd)/apps:/src ondrno/build-qt:latest cmake -B build /src -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/opt/qt/6.2.1/gcc_64``
 
 ## Build the application
-Once the make files were generated you can build the application as follows:
+Once the make files were generated you can build the application:
 
-``docker run -it --mount type=bind,source="$(pwd)/apps",target=/src ondrno/build-qt:latest cmake --build build``
+``docker run -it -v$(pwd)/apps:/src ondrno/build-qt:latest cmake --build build``
 
