@@ -1,0 +1,31 @@
+name: Container image scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Container image scan
+        uses: Azure/container-scan@v0.1
+        with:
+          # Docker image to scan
+          image-name: ondrno/build-qt:latest
+          # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
+          severity-threshold: LOW # optional, default is HIGH
+          # Username to authenticate to the Docker registry
+          username: # optional
+          # Password to authenticate to the Docker registry
+          password: # optional
+          # Github token
+          token: # default is ${{ github.token }}
+          # Add additional checks to ensure the image is secure and follows best practices and CIS standards
+          run-quality-checks: # optional, default is true
+
