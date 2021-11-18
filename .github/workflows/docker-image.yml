@@ -16,3 +16,16 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: ./build_docker.sh
+
+    - name: Container image scan
+      uses: Azure/container-scan@v0.1
+      with:
+        image-name: ondrno/build-qt:latest
+        # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
+        severity-threshold: LOW # optional, default is HIGH
+        # Username/Password to authenticate to the Docker registry
+        username: # optional
+        password: # optional
+        token: ${{ github.token }}
+        run-quality-checks: true  # optional, default is true
+
