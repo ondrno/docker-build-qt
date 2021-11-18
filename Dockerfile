@@ -28,4 +28,9 @@ RUN mkdir /src
 WORKDIR /src
 
 VOLUME ["/opt/qt", "/src"]
+
+# set default environment variables
+ENV CMAKE_PREFIX_PATH=/opt/qt/6.2.1/gcc_64
+ENV CMAKE_BUILD_TYPE=Release
+
 CMD ["bash"]
