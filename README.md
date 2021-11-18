@@ -1,4 +1,4 @@
-![Docker Image CI](https://github.com/ondrno/docker-build-qt/workflows/docker-image/badge.svg)
+![Docker Image CI](https://github.com/ondrno/docker-build-qt/actions/workflows/docker-image.yml/badge.svg)
 ----
 
 # docker-build-qt
