@@ -18,22 +18,22 @@ There are the following ENV variables defined:
 # How to use
 ## Prepare the make files
 1) To create the make files using the cmake defaults from an application which 
-is stored in the current working directory in the sub directory ``apps``:
+is stored in the current working directory:
 
-``docker run -it -v$(pwd)/apps:/src ondrno/build-qt:latest cmake -B build /src``
+``docker run -it -v$(pwd):/src ondrno/build-qt:latest cmake -B build``
 
 2) The same but configuring a "Debug" build:
 
-``docker run -it -v$(pwd)/apps:/src -e CMAKE_BUILD_TYPE=Debug ondrno/build-qt:latest cmake -B build /src``
+``docker run -it -v$(pwd):/src -e CMAKE_BUILD_TYPE=Debug ondrno/build-qt:latest cmake -B build``
 
 3) The same but configuring a "RelWithDebInfo" build:
 
-``docker run -it -v$(pwd)/apps:/src -e CMAKE_BUILD_TYPE=RelWithDebInfo ondrno/build-qt:latest cmake -B build /src``
+``docker run -it -v$(pwd):/src -e CMAKE_BUILD_TYPE=RelWithDebInfo ondrno/build-qt:latest cmake -B build``
 
 
 
 ## Build the application
 Once the make files were generated you can build the application:
 
-``docker run -it -v$(pwd)/apps:/src ondrno/build-qt:latest cmake --build build``
+``docker run -it -v$(pwd):/src ondrno/build-qt:latest cmake --build build``
 
