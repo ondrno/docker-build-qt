@@ -1,4 +1,7 @@
-# Contents
+![Docker Image CI](https://github.com/ondrno/docker-build-qt/workflows/docker-image/badge.svg)
+----
+
+# docker-build-qt
 This container can be used to build QT (v6.2.1) linux desktop 
 applications using cmake (3.21.4).
 
