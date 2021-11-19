@@ -22,7 +22,7 @@ jobs:
       with:
         image-name: ondrno/build-qt:latest
         # Minimum severities of vulnerabilities to be displayed (UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL)
-        severity-threshold:  # optional, default is HIGH
+        severity-threshold: HIGH # optional, default is HIGH
         # Username/Password to authenticate to the Docker registry
         username: # optional
         password: # optional

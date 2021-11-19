@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ondrno/gosu
 
 ARG BUILD_DATE
 ARG VERSION
@@ -36,3 +36,4 @@ ENV CMAKE_PREFIX_PATH=/opt/qt/6.2.1/gcc_64
 ENV CMAKE_BUILD_TYPE=Release
 
 CMD ["bash"]
+
