@@ -24,9 +24,6 @@ RUN apt-get update && apt-get install -y \
 RUN python3 -m pip install aqtinstall==2.0.2 cmake==3.21.4
 RUN python3 -m aqt install-qt linux desktop 6.2.1 gcc_64 --outputdir /opt/qt
 
-RUN useradd -d /home/buildbot -m -s /bin/bash buildbot
-RUN mkdir /src && chown buildbot.buildbot /src
-USER buildbot
 WORKDIR /src
 
 VOLUME ["/opt/qt", "/src"]
